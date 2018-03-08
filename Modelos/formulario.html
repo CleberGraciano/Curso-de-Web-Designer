@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+
+</head>
+<body>
+	
+	<form method="POST" action="form.php">
+		<div class="form-group">
+			<label for="nome">Nome</label>
+			<input type="text" name="nome" id="nome" class="form-control" required="true" placeholder="Digite seu nome" autofocus="true" tabindex="1" disabled="true">
+		</div>
+		<div class="form-group">
+			<label for="email">E-mail</label>
+			<input type="text" name="email" id="email" class="form-control" required="true" placeholder="seu@email.com" tabindex="2" readonly="true">
+		</div>
+		<div class="form-group">
+			<label for="nascimento">Nascimento</label>
+			<input type="date" name="data" id="nascimento" class="form-control" required="true" placeholder="Digite sua data de nascimento" min="2016-01-01" max="2018-03-07"> 
+		</div>
+		<div class="form-group">
+			<label >Sexo</label>
+			<input type="radio" name="sexo" id="masculino">
+			<label for="masculino">Masculino</label> 
+			<input type="radio" name="sexo" id="feminino" >
+			<label for="feminino">Feminino</label> 
+		</div>
+		<div class="form-group">
+			<label for="li">Li o contrato</label>
+			<input type="checkbox" name="li" id="li"  required="true" checked="true"> 
+		</div>
+		<div class="form-group">
+			<label for="volume">Volume</label>
+			<input type="range" name="volume" id="volume"  checked="true" min="0" max="100" value="25"> 
+		</div>
+
+		<div class="form-group">
+			<label for="meter">Bateria</label>
+			<meter name="meter" min="0" max="100" value="12" low="15" >50</meter> 
+		</div>
+		<div class="form-group">
+			<label for="meter">Carregando</label>
+			<progress name="" min="0" max="100" value="60">60%</progress> 
+		</div>
+		<div class="form-group">
+			<label for="ano">Ano Fabricação</label>
+			<input type="number" name="ano" id="ano" class="form-control" required="true" min="1992" max="2018" value="1992" step="2">
+		</div>
+		<div class="form-group">
+			<label for="cor">Cor</label>
+			<input type="color" name="cor" id="cor" class="form-control" >
+		</div>
+		<div class="form-group">
+			<label for="url">url</label>
+			<input type="url" name="url" id="url" class="form-control" >
+		</div>
+		<div class="form-group">
+			<label for="busca">Busca</label>
+			<input type="search" name="busca" id="busca" class="form-control" >
+		</div>
+		<div class="form-group">
+			<label for="mensagem">Mensagem</label>
+			<textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
+		</div>
+		<div class="form-group">
+			<label for="estados">Estados</label>
+			<select name="estados" id="estados" multiple="true" size="3">
+				<option value="SP">São Paulo</option>
+				<option value="MG" selected="true">Minas Gerais</option>
+				<option value="RJ">Rio de Janeiro</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="estados">Estados</label>
+			<select name="estados" id="estados" multiple="true" size="3">
+				<optgroup label="Sudeste">
+					<option value="SP">São Paulo</option>
+					<option value="MG" selected="true">Minas Gerais</option>
+					<option value="RJ">Rio de Janeiro</option>
+				</optgroup>
+				<optgroup label="Sul">
+					<option value="PR">Paraná</option>
+					<option value="SC" >Santa catarina</option>
+					<option value="RS">Rio grande do Sul</option>
+				</optgroup>
+			</select>
+		</div>
+
+		<input type="hidden" name="id" value="1">
+
+		<div class="form-group">
+			<label for="senha">Senha</label>
+			<input type="password" name="senha" id="senha" class="form-control" >
+		</div>
+
+		<div class="form-group">
+			<label for="mes">mês</label>
+			<input type="month" name="mes" id="mes" class="form-control" >
+		</div>
+		<div class="form-group">
+			<label for="semana">Semana</label>
+			<input type="week" name="semana" id="semana" class="form-control" >
+		</div>
+		<div class="form-group">
+			<label for="time">Hora</label>
+			<input type="time" name="time" id="time" class="form-control" >
+		</div>
+		<div class="form-group">
+			<input type="text" list="navegadores">
+			<datalist id="navegadores">
+				<option value="Chome" />
+				<option value="Firefox" />
+				<option value="Safari" />
+				<option value="Edge" />
+			</datalist>
+		</div>
+		<div>
+			<button type="submit" class="btn btn-primary">Cadastrar</button>
+		</div>
+		
+	</form>
+
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -12,3 +12,11 @@ https://getbootstrap.com/docs/3.3/components/
 Onde Parei Curso 
 
 https://www.udemy.com/curso-html5-css3-javascript/learn/v4/t/lecture/4054426?start=0
+
+
+Simbolo com fonte 
+
+https://fontawesome.com/get-started/web-fonts-with-css
+
+Componentes bootstrap
+https://getbootstrap.com/docs/3.3/components/#input-groups-buttons
