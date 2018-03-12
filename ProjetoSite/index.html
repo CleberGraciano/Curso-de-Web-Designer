@@ -2,12 +2,17 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="author" content="Cleber Batista Graciano">
+		<!-- Comando meta para configutar site para dispositivos mobile -->
+		<!-- <meta name="viewport" content="width:device-width, initial-scale=2, user-sacalable=no"> -->
+		<meta name="viewport" content="width:device-width, initial-scale=1">
 		<title>Orlando City</title>
 		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="lib/OwlCarousel/dist/assets/owl.carousel.min.css">
 		<link rel="stylesheet" type="text/css" href="lib/OwlCarousel/dist/assets/owl.theme.default.min.css">
 		<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/orlando.css">
+		<link rel="stylesheet" href="css/orlando-mobile.css">
 
 	</head>
 	<body>
@@ -16,13 +21,16 @@
 
 		<header>
 			
-			<div class="container">
+			
+			<div class="container container-logo">
 				<img id="logotipo" src="img/orlando-logo.png" alt="Logotipo">
 			</div>
 
 			<div class="header-black">
 				
 				<div class="container">
+					<button id="btn-bars" type="button"><i class="fa fa-bars"></i></button>
+					<button id="btn-search" type="button"><i class="fa fa-search"></i></button>
 				
 					<ul class="pull-right">
 						<li class="club-01"><a href="#"></a></li>
@@ -59,6 +67,8 @@
 					
 					<nav id="menu" class="pull-right">
 						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="videos.html">Videos</a></li>
 							<li><a href="#">Tickets</a></li>
 							<li><a href="#">News</a></li>
 							<li><a href="#">Schedule</a></li>
@@ -99,6 +109,9 @@
 					<h2>Latest News</h2>
 					<hr>
 				</div>
+
+				<button type="button" id="btn-news-prev"><i class="fa fa-angle-left"></i></button>
+				<button type="button" id="btn-news-next"><i class="fa fa-angle-right"></i></button>
 
 				<div class="row thumbnails owl-carousel owl-theme">
 
@@ -304,60 +317,6 @@
 		<script src="lib/jquery/jquery.min.js"></script>
 		<script type="text/javascript" src="lib/OwlCarousel/dist/owl.carousel.min.js"></script>
 		<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-
-		<script>
-
-			// Esse comando é chamado de Prologo, ou seja toda vez que eu for trabalhar com Jquery eu preciso colocar este comando
-			//onde document quer dizer o documento atual, read quer dizer quando, e funcition uma função, essa função é para ter certeza
-			//que o Jquery só vai ser executado após o carregamento da página.
-		
-
-			$(document).ready(function(){
-
-				//Criando um seletor ou seja comando para pegar o id de um objeto no caso o id logotipo
-				$("#logotipo").on("mouseover",function(){
-					$("#banner h1").addClass("efeito");
-
-				}).on("mouseout", function(){
-
-					$("#banner h1").removeClass("efeito");
-				});
-
-				$("#input-search").on("focus", function(){
-
-					$("li.search").addClass("ativo");
-
-				}).on("blur", function(){
-
-					$("li.search").removeClass("ativo");
-
-				});
-
-
-				//Adcionando Plugin owl-Carousel
-
-				$(".thumbnails").owlCarousel({
-					loop:true,
-					margin: 10,
-					//nav:true,
-					//navText: ["Anterior","Próximo"],
-					responsive: {
-						0 :{
-
-							items: 1
-						},
-						480 :{
-							items: 3
-						},
-						768 :{
-							items: 4
-						}
-						
-					}
-				});
-			});
-			
-		</script>
-
+		<script type="text/javascript" src="js/efeitos.js"></script>
 	</body>
 </html>

@@ -260,6 +260,7 @@ header #logotipo {
 
 #news .thumbnails .item-inner img {
 	width: 100%;
+	
 }
 #estatisticas {
 	background-color: #5E299A;
@@ -486,6 +487,11 @@ footer .list-sociais a {
 footer .list-sociais i {
 	font-size: 16px;
 	margin: 7px auto;
+}
+
+video {
+	width: 60%;
+	margin: 0 auto;
 }
 
 
