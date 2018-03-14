@@ -1,50 +1,142 @@
-// Esse comando é chamado de Prologo, ou seja toda vez que eu for trabalhar com Jquery eu preciso colocar este comando
-//onde document quer dizer o documento atual, read quer dizer quando, e funcition uma função, essa função é para ter certeza
-//que o Jquery só vai ser executado após o carregamento da página.
-
 $(document).ready(function(){
 
-				//Criando um seletor ou seja comando para pegar o id de um objeto no caso o id logotipo
-				$("#logotipo").on("mouseover",function(){
-					$("#banner h1").addClass("efeito");
+	$("#logotipo").on("mouseover",function(){
+		
+		$("#banner h1").addClass("efeito");
 
-				}).on("mouseout", function(){
+	}).on("mouseout", function(){
 
-					$("#banner h1").removeClass("efeito");
-				});
+		$("#banner h1").removeClass("efeito");
 
-				$("#input-search").on("focus", function(){
+	});
 
-					$("li.search").addClass("ativo");
+	$("#input-search").on("focus", function(){
 
-				}).on("blur", function(){
+		$("li.search").addClass("ativo");
 
-					$("li.search").removeClass("ativo");
+	}).on("blur", function(){
 
-				});
+		$("li.search").removeClass("ativo");				
+
+	});
+
+	$(".thumbnails").owlCarousel({
+ 
+      
+      autoPlay: 3000,
+      items : 4
+ 
+  	});
+
+  	var owl = $(".thumbnails").data('owlCarousel');
+
+  	$('#btn-news-prev').on("click", function(){
+
+  		owl.prev();
+
+  	});
+
+  	$('#btn-news-next').on("click", function(){
+
+  		owl.next();
+
+  	});
+
+  	$("#page-up").on("click", function(event){
+
+  		$("body").animate({
+  			scrollTop:0
+  		}, 1000);
+
+  		event.preventDefault();
+
+  	});
+
+    $("#btn-bars").on("click", function(){
+
+      $("header").toggleClass("open-menu");
+
+    });
+
+    $("#menu-mobile-mask, .btn-close").on("click", function(){
+
+      $("header").removeClass("open-menu");
 
 
-				//Adcionando Plugin owl-Carousel
+    });
 
-				$(".thumbnails").owlCarousel({
-					
-				 
-					loop:true,
-					margin: 10,
-					//nav:true,
-					//navText: ["Anterior","Próximo"],
-					responsive: {
-						0 :{
+    $("#btn-search").on("click", function(){
 
-							items: 1
-						},
-						480 :{
-							items: 3
-						},
-						768 :{
-							items: 4
-						}
-						
-					}
-				});
-			});
+      $("header").toggleClass("open-search");
+      $("#input-search-mobile").focus();
+
+     
+
+    });
+  
+   
+
+
+
+//Função usada na página de Videos
+
+/*
+    <script>
+    (function(d, p){
+        var a = new XMLHttpRequest(),
+            b = d.body;
+        a.open("GET", p, true);
+        a.send();
+        a.onload = function(){
+            var c = d.createElement("div");
+            c.style.display = "none";
+            c.innerHTML = a.responseText;
+            b.insertBefore(c, b.childNodes[0]);
+        }
+    })(document, "lib/plyr/dist/sprite.svg");
+    </script> */
+
+
+
+    $(function(){
+
+      $(".thumbnails .item").on("click", function(){
+        console.log();
+        $("video").attr({
+          "src":"mp4/"+$(this).data('video')+".mp4",
+          "poster":"img/"+$(this).data('video')+".jpg"
+        });
+      });
+
+      $("#volume").on("mousemove", function(){
+        $("video")[0].volume = parseFloat($(this).val());
+      });
+
+      $("#btn-play-pause").on("click", function(){
+
+        
+        var video = $("video")[0];
+
+        if ($(this).hasClass("btn-success")) {
+
+          $(this).text("STOP");
+
+          video.play();
+
+
+        }else {
+          $(this).text("PLAY");
+
+          video.pause();
+        }
+
+        $(this).toggleClass("btn-success btn-danger");
+      });
+
+      plyr.setup(); //Disparando Player plyr
+
+
+
+    });
+
+});

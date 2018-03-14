@@ -8,11 +8,12 @@
     "node"          : false,
     "rhino"         : false,
     "couch"         : false,
-    "wsh"           : false,   // Windows Scripting Host.
-    "jquery"        : false,
+    "wsh"           : true,   // Windows Scripting Host.
+    "jquery"        : true,
+    "predef"        : [ "jQuery", "$" ],
 
     // Development.
-    "debug"         : true,  // Allow debugger statements e.g. browser breakpoints.
+    "debug"         : false,  // Allow debugger statements e.g. browser breakpoints.
     "devel"         : true,   // Allow developments statements e.g. `console.log();`.
 
     // ECMAScript 5.
@@ -25,7 +26,7 @@
     "bitwise"       : false,  // Prohibit bitwise operators (&, |, ^, etc.).
     "boss"          : false,  // Tolerate assignments inside if, for & while. Usually conditions & loops are for comparison, not assignments.
     "curly"         : true,   // Require {} for every new block or scope.
-    "eqeqeq"        : true,  // Require triple equals i.e. `===`.
+    "eqeqeq"        : false,  // Require triple equals i.e. `===`.
     "eqnull"        : false,  // Tolerate use of `== null`.
     "evil"          : false,  // Tolerate use of `eval`.
     "expr"          : false,  // Tolerate `ExpressionStatement` as Programs.
@@ -50,6 +51,6 @@
     "plusplus"      : false,  // Prohibit use of `++` & `--`.
     "sub"           : false,  // Tolerate all forms of subscript notation besides dot notation e.g. `dict['key']` instead of `dict.key`.
     "trailing"      : true,   // Prohibit trailing whitespaces.
-    "white"         : true,  // Check against strict whitespace and indentation rules.
-    "indent"        : 4       // Specify indentation spacing
+    "white"         : false,  // Check against strict whitespace and indentation rules.
+    "indent"        : 2       // Specify indentation spacing
 }

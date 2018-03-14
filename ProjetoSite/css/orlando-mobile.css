@@ -18,8 +18,17 @@
 		display: none;
 	}
 
+	/*comando !important, usado para sobrescrever tag css marca como principal */
+
 	#logotipo {
 		left: 32%;
+		z-index: 10!important;
+		transition: 1s;
+
+	}
+
+	header.open-menu #logotipo {
+		transform: rotate(360deg);
 	}
 
 	#btn-bars, #btn-search {
@@ -30,9 +39,12 @@
 		background: none;
 		border: none;
 		display: block;
+		outline: 0;
+
 	}
 	#btn-bars {
 		left: 4px;
+
 
 	}
 	#btn-search {
@@ -66,7 +78,7 @@
 	}
 
 	.item .item-inner {
-		margin-left: 50px;
+		margin-left: 40px;
 		width: 80%;
 
 
@@ -88,13 +100,271 @@
 		font-size: 48px;
 		position: absolute;
 		top: 130px;
-		z-index: 4;
+		z-index: 1;
 		outline: 0;
 	}
 
 	#btn-news-next {
-		right: 10px;
+		right: 5px;
 	}
 
- }
+	#btn-news-prev {
+		left: 20px;
+	}
+/*Comando inherit, ele Herda a altura padrão, a altura maxima do elemento pai */
+	#estatisticas {
+		height: inherit;
+	}
+
+	#estatisticas p {
+		margin-bottom: 40px;
+		margin-top: 40px;
+	}
+
+	#call-to-action {
+		margin-top: 69px;
+	}
+	#call-to-action hr {
+		border-width: 4px;
+	}
+	#call-to-action p {
+		margin-top: 40px;
+		margin-bottom: 40px;
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+	#call-to-action h2 {
+		font-size: 32px;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	#call-to-action .btn {
+		min-width: 138px;
+	}
+
+	#call-to-action .btn-roxo {
+		float: left;
+	}
+	#call-to-action .btn-amarelo {
+		float: right;
+	}
+	footer {
+		margin-top: 60px;
+	}
+
+	.copyright-mobile p {
+		font-size: 10px;
+		line-height: 0;
+
+	}
+
+	.copyright-mobile .pull-left {
+		float: inherit!important;
+	}
+
+	footer .row p {
+		
+		text-align: center;
+		line-height: 20px; 
+		margin-left: 30px;
+	}
+	/* Comando first-child chamado de pseudo seletores css3, onde pega o primeira tag P dentro do footer, se quiser pegar o 3 ou 4 colocar o comando nth-child(2) */
+	footer .row p:first-child {
+		margin-top: 10px;
+	}
+
+	footer .text-roxo {
+		margin-right: 20px;
+	}
+
+	footer .row {
+		margin: 0;
+	}
+
+	footer .list-sociais {
+		position: absolute;
+		width: 100%;
+		left: 20px;
+		top: 50px;
+
+	}
+
+	footer .col-md-10 {
+		padding: 0;
+	}
+
+	footer .list-sociais a {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+
+
+		
+	}
+	footer .list-sociais i {
+		font-size: 30px;
+		margin: 9px;
+
+	}
+
+	footer .row-cinza-claro {
+		height: 157px;
+	}
+
+	footer .list-sociais li {
+		display: inline-block;
+		margin: 2px;
+	}
+	
+	footer .btn-footer {
+		width: 100%;
+		background-color: #11171D;
+		height: 44px;
+		line-height: 35px;
+ 
+	}
+		
+	footer .col-xs-6 {
+		padding: 0;
+		padding-right: 5px;	
+	}
+
+	footer .col-xs-6:last-child {
+		padding: 0;
+		padding-right: 0px;	
+		padding-left: 5px;
+	}
+
+	footer .hidden-sm-up {
+		margin-top: -10px;
+	}
+
+	header .header-black {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 9;
+	}
+
+	footer .page-up {
+		display: inline-block!important;;
+	}
+	header  #menu-mobile {
+		position: fixed;
+		top: 40px;
+		background-color: #fff;
+		width: 80%;
+		height: 100%;
+		left: -80%;
+		transition: 1s;
+		z-index: 5;
+		outline: 0;
+	}
+
+	header.open-menu #menu-mobile {
+
+		left: 0;
+
+
+	}
+
+	header.open-menu #menu-mobile-mask {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0, 0.6);
+		top: 0;
+		left: 0;
+		z-index: 4;
+
+	}
+
+	header.open-menu #logotipo {
+		position: fixed;
+		top: 50px;
+		height: 76px;
+		left: calc(40% - 33.5px);
+		z-index: 6;
+	}
+
+	header.open-menu #menu-mobile ul {
+		margin: 20px;
+		margin-top: 100px;
+	}
+	
+	header.open-menu #menu-mobile li{
+
+		text-align: center;
+		border-top: #ccc 1px solid;
+		
+	}
+
+	header.open-menu #menu-mobile li:last-child {
+		border-bottom: #ccc 1px solid;
+	}
+
+	header.open-menu #menu-mobile li a {
+		color: #633392;
+		font-family: 'OpenSans';
+		font-weight: bold;
+		font-size: 16px;
+		display: block;
+		padding: 18px;
+
+	}
+
+	header.open-menu .bar-close {
+		position: absolute;
+		bottom: 40px;
+		background-color: #633492;
+		height: 40px;
+		width: 100%;
+
+
+
+	}
+	header.open-menu .bar-close .btn-close {
+		background: none;
+		border: none;
+		color: #fff;
+		font-size: 22px;
+
+	}
+	.col-xs-6 {
+		padding: 3px;
+	}
+/* Comando outline: 0 é a borda que fica mesmo removendo a borda */
+	header #input-search-mobile {
+		transition: 1s;
+		top: -40px;
+		position: fixed;
+		width: 70%;
+		left: 15%;
+		background-color: #000;
+		border: none;
+		height: 40px;
+		color: #fff;
+		outline: 0;
+
+
+	}
+
+	header.open-search #input-search-mobile {
+	
+		width: 70%;
+		left: 15%;
+		top: 0;
+		
+	}
+
+	header.open-search #logotipo {
+		z-index: 9;
+		
+
+
+
+	}
+
+}
 	
